@@ -9,21 +9,21 @@ def not_allowed(password): # This function
         return True
     else:
         return False
-def special(password):
+def special(password): #this function checks if the password contains special characters or not
     spe = ["$", "@", "#", "%", "!", "^", "&", "*", "(", ")", "-", "_", "+", "=", "[", "]", "{", "}", ";", ":", "<", ">", ",", ".", "?", "/", "|", "\\", "~", "`"]
     for i in password:
         if i in spe:
             return True
         
     return False
-def num_char(password):
+def num_char(password): #this function checks if the password starts with a digit or any special character, if so then the password is rejected
     x=["$", "@", "#", "%", "!", "^", "&", "*", "(", ")", "-", "_", "+", "=", "[", "]", "{", "}", ";", ":", "<", ">", ",", ".", "?", "/", "|", "\\", "~", "`"]
     if password[0].isdigit() or password[0] in x:
         return False
     else:
         return True
     
-def capital_small(password):
+def capital_small(password): # this checks if the password contains atleast 1 lowercase and 1 uppercase letter
     upper=False
     lower=False
     for i in password:
@@ -36,8 +36,7 @@ def capital_small(password):
     else:
         return False
 
-def validity(password):
-    # a,b,c,d,e=0,0,0,0,0
+def validity(password): #this function just calls all the other functions and runs them
     a=length(password)
     b=not_allowed(password)
     c=special(password)
