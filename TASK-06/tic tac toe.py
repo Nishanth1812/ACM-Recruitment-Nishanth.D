@@ -83,5 +83,7 @@ while True:
     if ch.lower()=="no":
         print("thank you for playing")
         break
+    elif ch.lower=="yes":
+        pass
     else:
-        continue
+        print("invalid choice. please choose again")
