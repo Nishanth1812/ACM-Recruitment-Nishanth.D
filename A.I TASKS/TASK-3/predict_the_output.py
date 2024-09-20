@@ -1,6 +1,6 @@
 from csv import *
-def loading_data():
-    with open("data.csv", "w", newline='') as file1:  # Added newline='' to prevent blank lines in CSV
+def loading_data(): #this function loads the given dataset into a csv file known as data.csv
+    with open("data.csv", "w", newline='') as file1:  
         write = writer(file1)
         data = [
             [0.0, 0.0, 0.0], [0.5, 1.5, 23.4], [1.2, 2.3, 45.6], [1.8, 3.7, 12.1],
@@ -11,7 +11,7 @@ def loading_data():
         ]
         write.writerows(data)
         file1.close()
-def search():
+def search(): #this function searches the contents of the csv file based on the parameters given by the user
     a = float(input("Please enter the first number (as a floating point) "))
     b = float(input("Please enter the second number (as a floating point) "))
     with open("data.csv", "r") as file1:
@@ -24,7 +24,7 @@ def search():
 # Main Program
 loading_data()
 while True:
-    result = search()  # Capture the result from search
+    result = search()  
     if result is  None:
         print("No match found for the given inputs.")
     else:
